@@ -12,7 +12,8 @@ const Maker = ({ authService }) => {
       id: '1',
       name: 'Seungwan',
       company: 'Samsung',
-      theme: 'Software Engineer',
+      theme: 'dark',
+      title: 'Software Engineer',
       email: 'seungwan7511@gamil.com',
       message: 'go for it',
       fileName: 'seungwan',
@@ -22,7 +23,8 @@ const Maker = ({ authService }) => {
       id: '2',
       name: 'Seungwan',
       company: 'Samsung',
-      theme: 'Software Engineer',
+      theme: 'light',
+      title: 'Software Engineer',
       email: 'seungwan7511@gamil.com',
       message: 'go for it',
       fileName: 'seungwan',
@@ -32,7 +34,8 @@ const Maker = ({ authService }) => {
       id: '3',
       name: 'Seungwan',
       company: 'Samsung',
-      theme: 'Software Engineer',
+      theme: 'colorful',
+      title: 'Software Engineer',
       email: 'seungwan7511@gamil.com',
       message: 'go for it',
       fileName: 'seungwan',
@@ -46,7 +49,7 @@ const Maker = ({ authService }) => {
 
   useEffect(() => {
     authService.onAuthChange(user => {
-      if(!user) {
+      if (!user) {
         navigate('/');
       }
     })
@@ -55,8 +58,8 @@ const Maker = ({ authService }) => {
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor cards={cards}/>
-        <Preview cards={cards}/>
+        <Editor cards={cards} />
+        <Preview cards={cards} />
       </div>
       <Footer />
     </section>
