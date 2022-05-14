@@ -12,7 +12,8 @@ const CardAddForm = ({ onAdd }) => {
   const emailRef = useRef();
   const messageRef = useRef();
 
-  const onSubmit = (event) => {
+  const onSubmit = event => {
+    console.log(event);
     event.preventDefault();
     const card = {
       id: Date.now(), //uuid
@@ -28,29 +29,56 @@ const CardAddForm = ({ onAdd }) => {
     formRef.current.reset();
     onAdd(card);
   };
-
   return (
     <form ref={formRef} className={styles.form}>
       <input
-        ref={nameRef} className={styles.input} type="text" name="name" placeholder="Name" />
+        ref={nameRef}
+        className={styles.input}
+        type="text"
+        name="name"
+        placeholder="Name"
+      />
       <input
-        ref={companyRef} className={styles.input} type="text" name="company" placeholder="Company" />
+        ref={companyRef}
+        className={styles.input}
+        type="text"
+        name="company"
+        placeholder="Company"
+      />
       <select
-        ref={themeRef} className={styles.select} name="theme" placeholder="Theme">
+        ref={themeRef}
+        className={styles.select}
+        name="theme"
+        placeholder="Theme"
+      >
         <option placeholder="light">light</option>
         <option placeholder="dark">dark</option>
         <option placeholder="colorful">colorful</option>
       </select>
       <input
-        ref={titleRef} className={styles.input} type="text" name="title" placeholder="Title" />
+        ref={titleRef}
+        className={styles.input}
+        type="text"
+        name="title"
+        placeholder="Title"
+      />
       <input
-        ref={emailRef} className={styles.input} type="text" name="email" placeholder="Email" />
+        ref={emailRef}
+        className={styles.input}
+        type="text"
+        name="email"
+        placeholder="Email"
+      />
       <textarea
-        ref={messageRef} className={styles.textarea} name="message" placeholder="Message" />
+        ref={messageRef}
+        className={styles.textarea}
+        name="message"
+        placeholder="Message"
+      />
       <div className={styles.fileInput}>
         <ImageFileInput />
       </div>
-      <Button name='Add' onClick={onSubmit} />
+      <Button name="Add" onClick={onSubmit} />
     </form>
   );
 };
